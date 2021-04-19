@@ -1,0 +1,2 @@
+rootProject.name='Гороскоп 2020'
+include ':app'

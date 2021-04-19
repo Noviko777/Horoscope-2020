@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="basicClickHandlers"
+            type="allastro.horoscopedaily.check.activities.BaseActivity.BasicClickHandlers" />
+
+        <variable
+            name="clickHandlers"
+            type="allastro.horoscopedaily.check.activities.MainActivity.MainActivityClickHandlers" />
+
+
+
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg"
+            android:scaleType="centerCrop"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="136dp"
+            android:background="#7A64018B"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.71000004">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:id="@+id/aries"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/aries_sign" />
+
+                    <ImageView
+                        android:id="@+id/taurus"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/taurus_sign" />
+
+                    <ImageView
+                        android:id="@+id/gemini"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/gemini_sign" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:id="@+id/cancer"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/cancer_sign" />
+
+                    <ImageView
+                        android:id="@+id/leo"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/leo_sign" />
+
+                    <ImageView
+                        android:id="@+id/virgio"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/virgio_sign" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:id="@+id/libra"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/libra_sign" />
+
+                    <ImageView
+                        android:id="@+id/scorpio"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/scorpio_sign" />
+
+                    <ImageView
+                        android:id="@+id/sagittarius"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/sagittarius_sign" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:id="@+id/capricorn"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/capricorn_sign" />
+
+                    <ImageView
+                        android:id="@+id/aquarius"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/aquarius_sign" />
+
+                    <ImageView
+                        android:id="@+id/pisces"
+                        android:onClick="@{clickHandlers::zodiacClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/pisces_sign" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/bottom_navigation_bar"
+            bind:basicClickHandlers="@{basicClickHandlers}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="basicClickHandlers"
+            type="allastro.horoscopedaily.check.activities.BaseActivity.BasicClickHandlers" />
+
+        <variable
+            name="cookieClickHandlers"
+            type="allastro.horoscopedaily.check.activities.CookieActivity.ActivityCookieClickHandlers" />
+
+        <variable
+            name="answer"
+            type="String" />
+        <variable
+            name="answerVisibility"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.CookieActivity">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{answerVisibility ? @drawable/fortune_cookie_open : @drawable/fortune_cookie_closed}"
+            android:onClick="@{cookieClickHandlers::cookieClick}"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="250dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="62dp"
+            android:padding="5dp"
+            android:background="@drawable/cookie_text_back"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Нажмите на печенье чтобы увидеть результат"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="@{answerVisibility ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@+id/include"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="62dp"
+            android:padding="5dp"
+            android:background="@drawable/textview_back"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@{answer}"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="@{answerVisibility ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toTopOf="@+id/include"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/bottom_navigation_bar"
+            bind:basicClickHandlers="@{basicClickHandlers}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

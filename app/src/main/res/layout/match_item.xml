@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.graphics.Color"/>
+
+        <variable
+            name="match"
+            type="allastro.horoscopedaily.check.model.Match" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/cookie_text_back"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:drawableStart='@{match.drawable, default="@drawable/love_icon"}'
+            android:drawablePadding="5dp"
+            android:textColor="@{Color.parseColor(match.color)}"
+            android:textSize="15sp"
+            android:text='@{match.name, default="Love"}'/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text='@{match.description, default="Text"}'
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    </LinearLayout>
+</layout>
